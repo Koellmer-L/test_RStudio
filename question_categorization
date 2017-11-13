@@ -1,25 +1,25 @@
 olearningtest_id,question_id,topic_id,subtopic_id,max_pionts
 1,1,1,1,0.6	
 1,2,1,1,0.6	
-1,3,1,"Kosten- und Erlösrechnung",3.6	
+1,3,1,2,3.6	
 1,4,2,2,0.3	
-1,5,1,"Grundgrößen des Rechnungswesens",0.3	
-2,1,2,"Verschiedenes",		
+1,5,1,2,0.3	
+2,1,8,1,		
 2,2,2,1,
 2,3,2,4,
 2,4,2,3,
 2,5,2,5,
-3,1,2,"Innerbetribeliche Leistungsverrechnung",
-3,2,2,"Innerbetribeliche Leistungsverrechnung",
-3,3,4,"Erfassung des Materialverbrauchs",
+3,1,8,1,
+3,2,3,1 and 2,
+3,3,4,1,
 3,4,4,2,
-4,1,5,"Kostenfunktion",
-4,2,5,"Abweichungsanalyse",
-4,3,5,"Abweichungsanalyse",
-4,4,4,"Kalkulatorische Kostenarten",
+4,1,5,1,
+4,2,5,2,
+4,3,5,2,
+4,4,4,3,
 4,5,6,1,
-5,1,7,"Produktionsprogrammplanung","Diverses",
-5,2,7,"Produktionsprogrammplanung","Kurz vs. Langfristig",
-5,3,7,"Produktionsprogrammplanung ohne Engpass",
-5,4,7,"Produktionsprogrammplanung mit einem Engpass",
-5,5,7,"Ermittlung von Preisgrenzen","Deckungsbeitrag",
+5,1,8,1,
+5,2,7,1,
+5,3,7,1,
+5,4,7,2,
+5,5,6,1,
