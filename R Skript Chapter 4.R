@@ -78,3 +78,6 @@
     10  3.50   Ideal     H      I1  62.8    57 12587
     # ... with 22 more rows, and 3 more variables:
     #   x <dbl>, y <dbl>, z <dbl>
+    #
+    # Nützlicher Hinweis!:
+    # Wenn man Alt + Shift + K drückt bekommt man eine Übersicht von allen Tasterturabkürzungen, die es gibt.
