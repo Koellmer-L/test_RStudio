@@ -87,5 +87,69 @@ rename(flights, tail_num = tailnum)
 
 # Der mutate() Befehl:
 
+# Für die mutate-Funktion sollte man zuerst einen neuen Datensatz definieren:
+
+flights_sml <- select(flights,
+                      year:day
+                      ends_with("delay")
+                      distance
+                      air_time
+                      )
+
+# Wir haben jetzt aus der ursprünglichen Tabelle die Variablen rausgesucht die wir brauchten.
+
+mutate(flights_sml,
+       gain = arr_delay - dep_delay,
+       speed = distance / air_time * 60
+)
+
+# Nun haben wir 2 neue Variablen zum Datensatz hinzugefügt: gain und speed die wir definiert haben wie sie sich zusammensetzten.
+# Möchte man den Datensatz nur mit den neuen Variablen bilden benutzt man die Funktion transmutate.
+
+transmute(flights,
+          gain = arr_delay - dep_delay,
+          hours = air_time / 60,
+          gain_per_hour = gain / hours
+)
+
+# Oft gebräuchliche Operatoren:
+# +,-,/,*,^
+# Um den Durchschnitt zu bilden: mean (x)
+
+
+# Der summerise-Befehl:
+
+# Mit dem summerise Befehl werden die Daten zusammengefasst. Miestens auf den Durchschnitt:
+
+by_day <- group_by(flights, year, month, day)
+summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
+
+# In diesem Datenset sieht man nun die durchschnittliche Verspätung der Flüge geordnet nach den Tagen.
+
+
+# Die Pipe-Funktion: %>%
+
+# Beispiel:
+
+by_dest <- group_by(flights, dest)
+delay <- summarise(by_dest,
+                   count = n(),
+                   dist = mean(distance, na.rm = TRUE),
+                   delay = mean(arr_delay, na.rm = TRUE)
+)
+delay <- filter(delay, count > 20, dest != "HNL")
+
+delays <- flights %>% 
+  group_by(dest) %>% 
+  summarise(
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+  ) %>% 
+  filter(count > 20, dest != "HNL")
+
+# Beide Codes machen das gleiche. 
+# Der Voteil der Pipe Funktion ist es, dass man den Überblick über seine Daten besser vor Augen hat.
+# %>% kann wie ein "dann" gelesen werden.
 
 
