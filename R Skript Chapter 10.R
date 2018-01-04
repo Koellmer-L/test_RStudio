@@ -40,9 +40,3 @@ options(dplyr.print_min = Inf)
 # Möchte man es in einer Pipe (Schleife) benutzten muss man den Pkatzhalter . einfügen
 
 df %>% .$x
-
-
-
-
-
-
